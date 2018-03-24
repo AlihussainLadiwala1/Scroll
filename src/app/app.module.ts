@@ -9,15 +9,25 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { HomeService } from './home/home.service';
 import { HttpModule } from '@angular/http';
 
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import {environment} from '../environments/environment';
+import { AngularFireDatabaseModule} from 'angularfire2/database';
+import {AngularFireModule } from 'angularfire2';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    InfiniteScrollModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
+
   ],
   providers: [HomeService],
   bootstrap: [AppComponent]

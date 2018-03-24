@@ -1,36 +1,26 @@
-
 import { Injectable } from '@angular/core';
-import { escape } from 'querystring';
-import {Http} from '@angular/http';
+import { AngularFireDatabase, AngularFireObject } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
-import { HttpClient } from '@angular/common/http';
-import { HttpErrorResponse } from '@angular/common/http';
-import { Subject } from 'rxjs/Subject';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/take';
 
 
 @Injectable()
 export class HomeService {
+    lastkey;
+  constructor(private db: AngularFireDatabase) { }
 
-
-    title = 'JSON to Table Example';
-    constructor (private httpService: HttpClient) {
-        this.arrBirds = new Subject<string>();
-     }
-    arrBirds: Subject<string>;
-
-    // tslint:disable-next-line:use-life-cycle-interface
-    ngOnInit() {
-    }
-
-    getPostsForIndex(): Observable<Object> {
-        console.log(this.httpService.get<Object>(`/assets/ninjas.json`));
-      return this.httpService.get<Object>(`/assets/ninjas.json`);
-    }
+  getMovies(batch, lastKey?): Observable<any> {
 
 
 
+    if (lastKey) {
+        console.log('hi');
+        return this.db.list('/', ref => ref.orderByChild('id').limitToFirst(batch).startAt(lastKey)).valueChanges();
 
+    } else {
+        return this.db.list('/', ref => ref.orderByChild('id').limitToFirst(batch)
+    ).valueChanges();
+  }
 }
-
-
-
+}

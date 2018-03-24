@@ -3,23 +3,38 @@
     
     <span>
   
-    <li *ngFor="let item of data" (mouseenter)="fireEvent($event,'mouseEnter',item)" (mouseleave)="fireEvent($event,'mouseLeave')"><a href="#">
-      {{item.FIELD1}} 
+    <li *ngFor="let item of movies | async" ><a href="#">
+      {{item.name}} 
     </a>
-    <p>  {{item.FIELD2}} </p>
+  
 
  
    
   </li>
+
+  <div
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="1000"
+  (scrolled)="onScroll()">
+</div>
+
+  <div *ngIf="!finished">
+    Loading more movies...
+   </div>
+
+   <div *ngIf="finished">
+    End of database... That's all folks!
+  </div>
   
  
 
 
  
-  <div id="talk" *ngIf = "flag" style="z-index: 1; position: absolute; background-color: #000000; width: 20%; height: 100px; padding: 0px; color: white; "  [style.left.px] = "x"   [style.top.px]="y">
+  <!--<div id="talk" *ngIf = "flag" style="z-index: 1; position: absolute; background-color: #000000; width: 20%; height: 100px; padding: 0px; color: white; "  [style.left.px] = "x"   [style.top.px]="y">
     <p >{{slug}}</p>
   
-  </div>
+  </div> -->
   </span>
   
 
