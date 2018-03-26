@@ -100,7 +100,7 @@ nav p{
   padding: 20px;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12);
   border-radius: 2px;
-  width: 60%;
+  width: 30%;
  /* max-width: 740px;*/
   box-sizing: border-box;
   margin: 5% auto;
@@ -115,7 +115,7 @@ nav p{
   padding: 20px;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12);
   border-radius: 2px;
-  width: 33%;
+  width: 62%;
  /* max-width: 740px;*/
   box-sizing: border-box;
   margin: 5% auto;
@@ -220,3 +220,62 @@ nav p{
   color: #fff;
 }
 
+#power{
+  background: white;
+  border: 2px solid transparent;
+  width: 100px;
+  padding: 4px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: width 2s linear 1s;
+}
+#power:hover{
+  background:rgb(226, 247, 255);
+}
+
+#searchbar{
+  background: white;
+  border: 2px solid transparent;
+  padding: 4px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#searchbar:hover{
+  background:rgb(226, 247, 255);
+}
+#table{
+  width:100%;
+}
+#tr{
+  box-sizing: border-box;
+}
+#td{
+  width:100px;
+  padding: 2px;
+  margin: 10%;
+}
+#model{
+  left:20px;
+}
+#mobilemodel{
+  font-size: 20px;
+  transition: font-size .5s linear 1s;
+}
+#mobilemodel:hover{
+  font-size: 40px;
+}
+#img{
+  height: 50%;
+  width: 50%;
+  margin: 10%;
+}
+#img:hover{
+  width:75%;
+}
+#mainNav{
+  height: 7%;
+}

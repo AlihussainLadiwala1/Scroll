@@ -1,54 +1,65 @@
 
-<ul id="ninja-listing">
+
+
+
+
+
+
+<span>
+    <ul id="ninja-listing">
+        
+     
+      <table id="table">
+        <tr id="tr"  *ngFor="let item of movies1 | async "  (click)= "doSomething(item.FIELD10, item.FIELD40 , item.FIELD1, item.FIELD2, item.FIELD17, item.FIELD18)">
+        
+          <td id="td">
+          <img id="img" src = {{item.FIELD40}} >   
+          </td> 
+          <td id="mobilemodel">
+              <span>{{item.FIELD2}}</span>
+          </td>
+        </tr>   
+     </table>
+       
+     
     
-    <span>
-  
-    <li  *ngFor="let item of movies1 | async "  (click)= "doSomething(item.FIELD5)">
-      <img src= {{item.FIELD40}} >
+      <div
+      infiniteScroll
+      [infiniteScrollDistance]="2"
+      [infiniteScrollThrottle]="1000"
+      (scrolled)="onScroll()">
+    </div>
     
-  
-
- 
-   
-  </li>
-
-  <div
-  infiniteScroll
-  [infiniteScrollDistance]="2"
-  [infiniteScrollThrottle]="1000"
-  (scrolled)="onScroll()">
-</div>
-
-  <div *ngIf="!finished">
-    Loading more movies...
-   </div>
-
-   <div *ngIf="finished">
-    End of database... That's all folks!
-  </div>
-  
- 
-
-
- 
-  <!--<div id="talk" *ngIf = "flag" style="z-index: 1; position: absolute; background-color: #000000; width: 20%; height: 100px; padding: 0px; color: white; "  [style.left.px] = "x"   [style.top.px]="y">
-    <p >{{slug}}</p>
-  
-  </div> -->
-  </span>
-  
-
+      <div *ngIf="!finished">
+        Loading more movies...
+       </div>
     
-
-
-
-  
+       <div *ngIf="finished">
+        End of database... That's all folks!
+      </div>
+      
+     
     
     
-</ul>
-
-
-
-
-
-
+      <!--<div id="talk" *ngIf = "flag" style="z-index: 1; position: absolute; background-color: #000000; width: 20%; height: 100px; padding: 0px; color: white; "  [style.left.px] = "x"   [style.top.px]="y">
+        <p >{{slug}}</p>
+      
+      </div> -->
+      
+      
+    
+        
+    
+      
+        
+        
+    </ul>
+    
+    </span>
+    
+    
+    
+    
+    
+    
+    

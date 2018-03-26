@@ -33,6 +33,8 @@ export class HomeComponent implements OnInit {
   y;
   slug = 'empty';
   term = 'N';
+  Key;
+  finalKey;
 
   @Input() data1;
   @Input() data2;
@@ -49,6 +51,10 @@ export class HomeComponent implements OnInit {
     finished = false;  // boolean when end of database is reached
     // tslint:disable-next-line:no-output-on-prefix
     @Output() createProject = new EventEmitter<any>();
+    @Output() Image = new EventEmitter<any>();
+    @Output() Brand = new EventEmitter<any>();
+    @Output() ModelName = new EventEmitter<any>();
+    metaData = [];
     constructor(private movieService: HomeService) {
 
     }
@@ -57,6 +63,8 @@ export class HomeComponent implements OnInit {
     ngOnChanges() {
       console.log('hussain');
       this.d = this.data1;
+      console.log(this.d);
+    
       this.d1 = this.data2;
       this.movies.next([]);
      this.movies1.next([]);
@@ -69,6 +77,9 @@ export class HomeComponent implements OnInit {
    
 
     }
+
+
+   
 
    
   ngOnInit() {
@@ -94,9 +105,19 @@ export class HomeComponent implements OnInit {
     
   }
 
-  doSomething(item: string)
+  doSomething(item: string, image: string, brand: string, ModelName: string, resolution: string, size: string)
   {
-    this.createProject.emit(item);
+    console.log(item);
+    this.metaData.push(item);
+    this.metaData.push(image);
+    this.metaData.push(ModelName);
+    this.metaData.push(resolution);
+    this.metaData.push(size);
+
+    this.createProject.emit(this.metaData);
+  /*  this.Image.emit(image);
+    this.Brand.emit(brand);
+    this.ModelName.emit(ModelName);*/
   }
 
   onScroll () {
@@ -156,12 +177,19 @@ export class HomeComponent implements OnInit {
               for (var i=0 ; i < this.movies1.value.length ; i++)
               {
                   //  console.log(this.movies.value[i]);
+                  if(this.d === 'Brand Name')
+                  {
                     search.add( this.movies1.value[i] , filter);
+                  }
+                  if(this.d === 'OS Type')
+                  {
+                    search.add( this.movies1.value[i] , filter1);
+                  }
               }
             //  console.log(newMovies);
               if(search.search(this.d1).length < 16)
               {
-                this.batch = this.batch * 4;
+                //this.batch = this.batch * 4;
                 this.onScroll();
               }
             //  this.data.push(search.search(this.d1));
@@ -184,12 +212,28 @@ export class HomeComponent implements OnInit {
 
     var filter = function (key, val) {
       // Return false if you want to ignore field 
-      if (key == 'id' || key == 'number_of_devices' || key == 'slug') {
-          return false;   // Ignore field 
+   
+
+      if (key === 'FIELD2')
+       {
+          return true;   // Ignore field 
       }
    
-      return true;    // Accept field 
+      return false;    // Accept field 
   };
+
+
+  var filter1 = function (key, val) {
+    // Return false if you want to ignore field 
+ 
+
+    if (key === 'FIELD2')
+     {
+        return true;   // Ignore field 
+    }
+ 
+    return false;    // Accept field 
+};
 
 
 }
