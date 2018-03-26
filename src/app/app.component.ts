@@ -16,12 +16,18 @@ export class AppComponent {
 
  powers = ['Brand Name', 'OS Type'];
 
- power = this.powers[1];
+ power = this.powers[0];
  metadata;
  img;
  brand;
  resolution;
  size;
+ os;
+ chipset;
+ internalMem;
+ ram;
+ primaryCam;
+ Battery;
 
 
  createProject(event: string)
@@ -31,6 +37,12 @@ export class AppComponent {
    this.brand = event[2];
    this.resolution = event[3];
    this.size = event[4];
+   this.os = event[5];
+   this.chipset = event[6];
+   this.internalMem = event[7];
+   this.ram = event[8];
+   this.primaryCam = event[9];
+   this.Battery = event[10];
 
 
    console.log(event);

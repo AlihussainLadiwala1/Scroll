@@ -10,15 +10,19 @@
         
      
       <table id="table">
-        <tr id="tr"  *ngFor="let item of movies1 | async "  (click)= "doSomething(item.FIELD10, item.FIELD40 , item.FIELD1, item.FIELD2, item.FIELD17, item.FIELD18)">
+          <tr id="tr"  *ngFor="let item of movies1 | async   "  (click)= "doSomething(item.FIELD10, item.FIELD40 , item.FIELD1, item.FIELD2, item.FIELD17, item.FIELD18,
+          item.FIELD19, item.FIELD21, item.FIELD24, item.FIELD25, item.FIELD26, item.FIELD37)">
         
           <td id="td">
           <img id="img" src = {{item.FIELD40}} >   
-          </td> 
+          </td>
           <td id="mobilemodel">
+              <span style="font-size: 25px">{{item.FIELD1}}</span>
+              <br>
               <span>{{item.FIELD2}}</span>
           </td>
-        </tr>   
+        </tr>  
+         
      </table>
        
      
@@ -31,11 +35,11 @@
     </div>
     
       <div *ngIf="!finished">
-        Loading more movies...
+        <img class = "spinner" src= "https://raw.githubusercontent.com/MicroFocus/octane-visual-studio-plugin/master/OctaneVSPlugin/Resources/octane_preloader.gif ">
        </div>
     
        <div *ngIf="finished">
-        End of database... That's all folks!
+        
       </div>
       
      

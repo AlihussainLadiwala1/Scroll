@@ -2,7 +2,7 @@ body{
   font-family: verdana;
   letter-spacing: 0.1em;
   color: #606060;
-  background: #eee;
+  background: linear-gradient(to right,#f3f1f1 0%,#ebeaea 100%);
   padding: 20px;
 }
 
@@ -28,6 +28,7 @@ nav{
   background: dodgerblue; 
  /* max-width: 740px;*/
   margin: 0 auto;
+  text-align: center;
 }
 
 nav ul{
@@ -96,8 +97,8 @@ nav p{
 /* MAIN */
 
 #main{
-  background: eee;
-  padding: 20px;
+  background: #fff;
+  padding: 0px;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12);
   border-radius: 2px;
   width: 30%;
@@ -106,12 +107,12 @@ nav p{
   margin: 5% auto;
   display: inline-block;  
   left: 40px;
-  position: absolute;
+  position: relative;
 }
 
 
 #main1{
-  background: eee;
+  background: #fff;
   padding: 20px;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12);
   border-radius: 2px;
@@ -215,15 +216,18 @@ nav p{
 }
 
 #subheader{
-  background-color: skyblue;
+  background-color: #ffff;
   padding: 5px;
-  color: #fff;
+  color: rgba(17, 16, 16, 0.863);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 30px;
+  text-align: center;
 }
 
 #power{
   background: white;
   border: 2px solid transparent;
-  width: 100px;
+  width: 120px;
   padding: 4px;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
@@ -248,34 +252,70 @@ nav p{
   background:rgb(226, 247, 255);
 }
 #table{
+  padding: 0px;
   width:100%;
 }
 #tr{
   box-sizing: border-box;
+  border-bottom: 2px solid rgba(129, 127, 127, 0.356);
+}
+#tr:hover{
+  box-shadow: 0px 0px 8px 2px rgb(100, 100, 100);
 }
 #td{
   width:100px;
-  padding: 2px;
-  margin: 10%;
+  padding: 0px;
+  margin: 9%;
 }
 #model{
   left:20px;
 }
 #mobilemodel{
   font-size: 20px;
-  transition: font-size .5s linear 1s;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial" sans-serif;
+  transition: font-size .1s linear 0.1s;
 }
 #mobilemodel:hover{
-  font-size: 40px;
+  font-size: 30px;
 }
 #img{
-  height: 50%;
+  height: 30%;
   width: 50%;
   margin: 10%;
 }
-#img:hover{
-  width:75%;
-}
 #mainNav{
   height: 7%;
+}
+#specification{
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial" sans-serif;
+}
+#specid{
+ padding: 10px;
+}
+.footer{
+  padding: 5px;
+  text-align: center;
+  margin-top: 3px;
+}
+.header{
+  font-size: 40px;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial" sans-serif;
+  text-align: center;
+  margin-left: 400px;
+  margin-top: 8px;
+  font-weight: 500;
+}
+.header-logo{
+  display: inline-block;
+  position: relative;
+  align-items: center;
+  width: 13%;
+  height: 13%;
+  }  
+.spinner{
+  align-items: center;
+  align-content: center;
+  width: 20%;
+  height: 20%;
+  margin-left: 200px;
 }

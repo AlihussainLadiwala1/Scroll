@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
  
   d;
 
-  d1;
+  d1 = 'Brand Name';
 
   movies = new BehaviorSubject([]);
   movies1 = new BehaviorSubject([]);
@@ -105,14 +105,23 @@ export class HomeComponent implements OnInit {
     
   }
 
-  doSomething(item: string, image: string, brand: string, ModelName: string, resolution: string, size: string)
+  doSomething(item: string, image: string, brand: string, ModelName: string, resolution: string, size: string,
+  os: string, chipset: string, internalMemory: string, ram: string,  primaryCam: string, Battery: string)
   {
     console.log(item);
+    this.metaData = [];
     this.metaData.push(item);
     this.metaData.push(image);
     this.metaData.push(ModelName);
     this.metaData.push(resolution);
     this.metaData.push(size);
+    this.metaData.push(os);
+    this.metaData.push(chipset);
+    this.metaData.push(internalMemory);
+    this.metaData.push(ram);
+    this.metaData.push(primaryCam);
+    this.metaData.push(Battery);
+
 
     this.createProject.emit(this.metaData);
   /*  this.Image.emit(image);
@@ -125,6 +134,11 @@ export class HomeComponent implements OnInit {
    // this.movies = new BehaviorSubject([]);
    // this.lastKey = undefined;
     this.getMovies();
+  }
+
+  doit(mov)
+  {
+    console.log(mov);
   }
 
   /*fireEvent($event, stat, item) {
@@ -150,13 +164,13 @@ export class HomeComponent implements OnInit {
             /// set the lastKey in preparation for next query
             console.log(movies);
          //   console.log(search.search('z'));
-            this.lastKey = _.last(movies)['FIELD2'];
+            this.lastKey = _.last(movies)['FIELD40'];
             console.log(this.lastKey);
             const newMovies = _.slice(movies, 0, this.batch);
             /// Get current movies in BehaviorSubject
             const currentMovies = this.movies.getValue();
             /// If data is identical, stop making queries
-            if (this.lastKey === _.last(newMovies)['FIELD2']) {
+            if (this.lastKey === _.last(newMovies)['FIELD40']) {
               console.log('hello');
               this.finished = true;
             }
@@ -227,7 +241,7 @@ export class HomeComponent implements OnInit {
     // Return false if you want to ignore field 
  
 
-    if (key === 'FIELD2')
+    if (key === 'FIELD19')
      {
         return true;   // Ignore field 
     }

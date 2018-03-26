@@ -16,9 +16,10 @@
   </head>
   
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg fixed-top">
+  <nav class="navbar navbar-expand-lg fixed-top" style="text-align:center">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">List scroll Demo</a>
+      <img class = "header-logo" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Micro_Focus_logo.svg/2000px-Micro_Focus_logo.svg.png"> 
+      <p class="header">DATA HANDLER</p>
       <div class="collapse navbar-collapse" id="navbarResponsive">      
       </div>
      </div>
@@ -36,30 +37,33 @@
   <app-home  [data1] = "power"  [data2] = "typed" (createProject)="createProject($event)">Loading</app-home>
   </div>
   <div id="main1">
-  <p id="subheader">Info of clicked item</p>
+  <p id="subheader">Specifications</p>
   <div id="details">
   <ul>
   
-  <table cellpadding = "100px">
-  <tr>
-  <td  *ngIf="metadata else empty" ><label> Released: </label> &nbsp; {{metadata}} <br> <label> Model Name: </label> &nbsp; {{brand}} <br> <label> Resolution: </label> &nbsp; {{resolution}}  
-  <br>  <label> Size: </label> &nbsp; {{size}} </td>
-  <td  id = ""><img   src= {{img}}></td>
-  </tr>
-  </table>
+      <table id="specification" *ngIf="metadata else empty">
+          <tr>
+              <td  id = "specimg"><img   src= {{img}}></td>
+          <td id="specid"  ><label> Released: </label> &nbsp; {{metadata}} <br> <label> Model Name: </label> &nbsp; {{brand}} <br> <label> Resolution: </label> &nbsp; {{resolution}}  
+          <br>  <label> Size: </label> &nbsp; {{size}} <br> <label> OS: </label> &nbsp; {{os}}  <br> <label> Chipset: </label> &nbsp; {{chipset}} <br> <label> Internal Memory: </label> &nbsp; {{internalMem}}
+          <br> <label> Ram: </label> &nbsp; {{ram}} <br> <label> Primary Cam: </label> &nbsp; {{primaryCam}} <br> <label> Battery: </label> &nbsp; {{Battery}}</td>  
+          </tr>
+          </table>
   
   </ul>
   </div>
   </div> 
   <nav class="fixed-bottom" id="mainNav">
   <div class="container">
-  <p class="navbar-brand js-scroll-trigger">&copy;Copyright 2018</p>
+  <p class="footer">&copy;Copyright 2018</p>
   </div>
   </nav>
 
 
   <ng-template #empty>
-      <p style= "text-align:center">Click Item to Display Mobile Specification</p>
+      <div style="height:300px">
+        <br><br><br><br>
+        <p style= "text-align: center">Click item to Display Mobile Specification</p></div>
  </ng-template>
   
   

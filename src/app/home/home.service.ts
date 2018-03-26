@@ -18,11 +18,11 @@ export class HomeService {
   getMovies(batch, lastKey?): Observable<any> {
     if (lastKey) {
         console.log('hi');
-        return this.db.list('/', ref => ref.orderByChild('FIELD2').limitToFirst(batch).startAt(lastKey)).valueChanges();
+        return this.db.list('/', ref => ref.orderByChild('FIELD40').limitToFirst(batch).startAt(lastKey)).valueChanges();
 
     } else {
         console.log('hellllo');
-        return this.db.list('/', ref => ref.orderByChild('FIELD2').limitToFirst(batch)
+        return this.db.list('/', ref => ref.orderByChild('FIELD40').limitToFirst(batch)
     ).valueChanges();
   }
 }
