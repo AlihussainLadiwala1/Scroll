@@ -19,31 +19,38 @@
 <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
   <div class="container">
     <a class="navbar-brand js-scroll-trigger" href="#page-top">List scroll Demo</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+   
+
+    
+
     <div class="collapse navbar-collapse" id="navbarResponsive">
+       
     </div>
-  </div>
+
+    
+   </div>
+
+ 
+  
+    <select id="power"  [name]="power" [(ngModel)] = "power">
+   <option *ngFor="let pow of powers" [value]="pow" >{{pow}}</option>
+
+  </select>
+  &nbsp; &nbsp; &nbsp; &nbsp;
+   <div style="right:0px">
+   <input type="text" (input)="valuechange($event.target.value)">
+   </div>
+  
 </nav>
-<div id="main2">
-<p id="subheader">History of viewed items</p>
-<div id="details">  
-<ul>
-<li>Mobile 4</li>
-<li>mobile 2</li>
-</ul>
-</div>
-</div>
 <div id="main">
-<app-home>Loading</app-home>
+<app-home  [data1] = "power"  [data2] = "typed" (createProject)="createProject($event)">Loading</app-home>
 </div>
 <div id="main1">
 <p id="subheader">Info of clicked item</p>
 <div id="details">
 <ul>
-<li>prop1:val1</li>
-<li>prop2:val2</li>
+
+<li>{{metadata}}</li>
 </ul>
 </div>
 </div> 

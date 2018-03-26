@@ -53,6 +53,38 @@ nav a{
   text-decoration: none;
 }
 
+nav label{
+  text-align: center;
+  padding: 16px 0;
+  color: #eee;
+  display: block;
+  text-decoration: none;
+  font-size: 19px;
+
+}
+
+.select-style {
+  border: 1px solid #ccc;
+  width: 120px;
+  border-radius: 3px;
+  overflow: hidden;
+  background: #fafafa url("img/icon-select.png") no-repeat 90% 50%;
+}
+
+.select-style select {
+  padding: 5px 8px;
+  width: 130%;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  background-image: none;
+  -webkit-appearance: none;
+}
+
+.select-style select:focus {
+  outline: none;
+}
+
 nav p{
   text-align: center;
   padding: 16px 0;
@@ -68,12 +100,12 @@ nav p{
   padding: 20px;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12);
   border-radius: 2px;
-  width: 33%;
+  width: 60%;
  /* max-width: 740px;*/
   box-sizing: border-box;
   margin: 5% auto;
   display: inline-block;  
-  left: 510px;
+  left: 40px;
   position: absolute;
 }
 
@@ -88,7 +120,7 @@ nav p{
   box-sizing: border-box;
   margin: 5% auto;
   display: inline-block;  
-  right: 0px;
+  right: 30px;
   position: fixed;
 }
 

@@ -13,6 +13,9 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import {environment} from '../environments/environment';
 import { AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireModule } from 'angularfire2';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 
@@ -23,10 +26,12 @@ import {AngularFireModule } from 'angularfire2';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpModule,
     InfiniteScrollModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    Ng2SearchPipeModule
 
   ],
   providers: [HomeService],

@@ -3,9 +3,9 @@
     
     <span>
   
-    <li *ngFor="let item of movies | async" ><a href="#">
-      {{item.name}} 
-    </a>
+    <li  *ngFor="let item of movies1 | async "  (click)= "doSomething(item.FIELD5)">
+      <img src= {{item.FIELD40}} >
+    
   
 
  
