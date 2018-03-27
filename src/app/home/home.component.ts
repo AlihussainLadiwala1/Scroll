@@ -70,6 +70,7 @@ export class HomeComponent implements OnInit {
      this.movies1.next([]);
     
    //  this.finished = false;
+     this.batch = 15;
      this.lastKey = undefined;
      this.finished = false;
       this.getMovies();
@@ -203,7 +204,7 @@ export class HomeComponent implements OnInit {
             //  console.log(newMovies);
               if(search.search(this.d1).length < 16)
               {
-                //this.batch = this.batch * 4;
+                this.batch = this.batch * 2;
                 this.onScroll();
               }
             //  this.data.push(search.search(this.d1));
